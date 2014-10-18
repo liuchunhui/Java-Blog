@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--指定Hibernate3映射文件的DTD信息-->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+<!-- hibernate-mapping是映射文件的根元素-->
+<hibernate-mapping package="com.huihui.model">
+    <!-- 每个class元素对应一个持久化对象 -->
+    <class name="Message" table="messages_table">
+        <!-- id元素定义持久化类的标识属性 -->
+        <id name="id" column="id" type="integer">
+            <!-- 指定主键生成策略 -->
+            <generator class="identity" />
+        </id>
+        <!--property元素定义常规属性-->
+        <property name="visitor" column="message_visitor" type="string" />
+        <property name="word" column="message_word" type="string" />
+        <property name="date" column="message_date" type="date" />
+        <!--必须指定列名为article_id，与关联实体中的key元素的column的属性值相同-->
+        <many-to-one name="article" class="Article" column="article_id"  not-null="true" />
+    </class>
+</hibernate-mapping>

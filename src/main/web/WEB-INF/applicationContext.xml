@@ -42,6 +42,7 @@
         <property name="mappingResources">
             <list>
                 <value>com/huihui/model/Article.hbm.xml</value>
+                <value>com/huihui/model/Message.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">

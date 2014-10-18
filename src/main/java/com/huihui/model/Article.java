@@ -1,6 +1,8 @@
 package com.huihui.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by huihui on 14-10-18.
@@ -30,12 +32,19 @@ public class Article {
      */
     private Date date;
 
+    /**
+     * @param messages
+     * 博客文章的评论留言
+     */
+    private Set<Message> messages = new HashSet<Message>();
+
     public Article() { }
-    public Article(int id,String title,String content,Date date) {
+    public Article(int id,String title,String content,Date date,Set<Message> messages) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.date = date;
+        this.messages = messages;
     }
 
     public int getId() {
@@ -68,5 +77,13 @@ public class Article {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Set<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(Set<Message> messages) {
+        this.messages = messages;
     }
 }
