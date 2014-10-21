@@ -20,3 +20,4 @@
         <many-to-one name="article" class="Article" column="article_id"  not-null="true" />
     </class>
 </hibernate-mapping>
+        

@@ -53,5 +53,12 @@
             </value>
         </property>
     </bean>
+
+    <bean id="articleDao" class="com.huihui.dao.impl.ArticleDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="articleService" class="com.huihui.service.impl.ArticleServiceImpl">
+        <property name="articleDao" ref="articleDao"/>
+    </bean>
 </beans>
 
