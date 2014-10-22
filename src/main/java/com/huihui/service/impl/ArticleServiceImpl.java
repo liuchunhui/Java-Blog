@@ -1,6 +1,7 @@
 package com.huihui.service.impl;
 
 import com.huihui.dao.ArticleDao;
+import com.huihui.dao.impl.ArticleDaoImpl;
 import com.huihui.model.Article;
 import com.huihui.service.ArticleService;
 

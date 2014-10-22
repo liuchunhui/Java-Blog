@@ -60,5 +60,6 @@
     <bean id="articleService" class="com.huihui.service.impl.ArticleServiceImpl">
         <property name="articleDao" ref="articleDao"/>
     </bean>
+
 </beans>
 
