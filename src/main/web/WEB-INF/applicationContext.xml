@@ -61,5 +61,14 @@
         <property name="articleDao" ref="articleDao"/>
     </bean>
 
+    <bean id="articleAction" class="com.huihui.action.ArticleAction">
+        <property name="articleService" ref="articleService" />
+        <property name="article" ref="article"/>
+    </bean>
+
+    <bean id="article" class="com.huihui.model.Article" scope="prototype">
+
+    </bean>
+
 </beans>
 

@@ -3,17 +3,19 @@
   Created by IntelliJ IDEA.
   User: huihui
   Date: 14-10-22
-  Time: 下午4:31
+  Time: 下午8:25
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title><s:text name="succPage" /></title>
+    <title></title>
 </head>
 <body>
-    本站访问次数为：${applicationScope.counter} </br>
-    ${sessionScope.user}，您已经登录！</br>
-    ${requestScope.tip}
+    <s:form action="article">
+        <s:textfield name="title" key="title"/> </br>
+        <s:textfield name="context" key="content"/></br>
+        <s:submit value="保存" key="article" />
+    </s:form>
 </body>
 </html>

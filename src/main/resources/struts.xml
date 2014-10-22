@@ -8,9 +8,9 @@
     <!-- 指定全局国际化资源文件-->
     <constant name="struts.custom.i18n.resources" value="mess" />
     <!-- 指定国际化编码所使用的字符集 -->
-    <constant name="struts.i18n.encoding" value="GBK" />
+    <constant name="struts.i18n.encoding" value="UTF-8" />
 
-    <constant name="conststruts.devMode" value="true" />
+    <!--<constant name="conststruts.devMode" value="true" />-->
     <!-- Struct2的所有Action都需位于package下 -->
     <package name="lee" extends="struts-default">
         <!-- 定义名为login的Action，其实现类为LoginAction-->
@@ -19,6 +19,12 @@
             <result name="error">/error.jsp</result>
             <!-- 如果处理结果返回为success.jsp，对应/welcome.jsp -->
             <result name="success">/welcome.jsp</result>
+        </action>
+
+        <!-- 定义名为article的Action，其实现类是ArticleAction-->
+        <action name="article" class="com.huihui.action.ArticleAction">
+            <result name="error">/error.jsp</result>
+            <result name="success">/home.jsp</result>
         </action>
     </package>
 </struts>
