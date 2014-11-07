@@ -3,3 +3,7 @@ JavaBlog/out/*
 JavaBlog/target/*
 JavaBlog/.idea/workspace.xml
 JavaBlog/lib/*
+HibernateTest/lib/*
+HibernateTest/target/*
+StrutsTest/lib/*
+StrutsTest/out/*
