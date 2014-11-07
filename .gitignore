@@ -1,5 +1,5 @@
 *~
-out/*
-target/*
-.idea/workspace.xml
-lib/*
+JavaBlog/out/*
+JavaBlog/target/*
+JavaBlog/.idea/workspace.xml
+JavaBlog/lib/*
