@@ -33,6 +33,7 @@
         <property name="hibernate.format_sql">true</property>
         <!--罗列所有持久话类的类名-->
         <!--<mapping class="org.huihui.app.domain.News" />-->
-        <mapping class="org.huihui.app.domain.Person"/>
+        <!--<mapping class="org.huihui.app.domain.Person"/>-->
+
     </session-factory>
 </hibernate-configuration>
