@@ -34,6 +34,11 @@
         <!--罗列所有持久话类的类名-->
         <!--<mapping class="org.huihui.app.domain.News" />-->
         <!--<mapping class="org.huihui.app.domain.Person"/>-->
+        <mapping class="org.huihui.app.domain.inherit.Person" />
+        <mapping class="org.huihui.app.domain.inherit.Address" />
+        <mapping class="org.huihui.app.domain.inherit.Employee" />
+        <mapping class="org.huihui.app.domain.inherit.Customer" />
+        <mapping class="org.huihui.app.domain.inherit.Manager" />
 
     </session-factory>
 </hibernate-configuration>

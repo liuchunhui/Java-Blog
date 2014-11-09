@@ -1,5 +1,9 @@
 package org.huihui.app.domain.inherit;
 
+import org.hibernate.annotations.Parent;
+
+import javax.persistence.Embedded;
+
 /**
  * Created by huihui on 14-11-8.
  */
@@ -48,4 +52,5 @@ public class Address {
     public void setCountry(String country) {
         this.country = country;
     }
+
 }

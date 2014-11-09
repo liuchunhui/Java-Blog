@@ -32,6 +32,7 @@ public class Person {
 
     //  构造方法
     public Person() {
+        address = new Address();
 
     }
     private Person(Integer id,String name,char gender) {
