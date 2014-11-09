@@ -11,7 +11,7 @@ import javax.persistence.*;
         discriminatorType = DiscriminatorType.STRING)
 // 指定person实体对应的记录在辨别者列的值为"普通人"
 @DiscriminatorValue("普通人")
-@Table(name = "person_inf")
+@Table(name = "person_table")
 public class Person {
     // 标识属性
     @Id @Column(name = "person_id")

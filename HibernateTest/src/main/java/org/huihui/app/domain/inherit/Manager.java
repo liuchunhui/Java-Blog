@@ -10,11 +10,11 @@ import java.util.Set;
 @Entity
 @DiscriminatorValue("经理")
 @Table(name = "manager_inf")
-public class Manager extends Person{
-    // 定义该经理的成员变量
-    private String title;
-    // 定义该经理的成员变量
-    private double salary;
+public class Manager extends Employee{
+//    // 定义该经理的成员变量
+//    private String title;
+//    // 定义该经理的成员变量
+//    private double salary;
     // 定义该经理的部门
     private String department;
 
@@ -26,29 +26,32 @@ public class Manager extends Person{
     public Manager() {
 
     }
-    public Manager(String title,double salary,String department) {
-        this.title = title;
-        this.salary = salary;
+//    public Manager(String title,double salary,String department) {
+//        this.title = title;
+//        this.salary = salary;
+//        this.department = department;
+//    }
+    public Manager(String department) {
         this.department = department;
     }
 
     // get/set方法
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
+//    public String getTitle() {
+//        return title;
+//    }
+//
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
+//
+//    public double getSalary() {
+//        return salary;
+//    }
+//
+//    public void setSalary(double salary) {
+//        this.salary = salary;
+//    }
 
     public Set<Employee> getEmployees() {
         return employees;
