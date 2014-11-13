@@ -7,3 +7,5 @@ HibernateTest/lib/*
 HibernateTest/target/*
 StrutsTest/lib/*
 StrutsTest/out/*
+HQLTest/lib/*
+HQLTest/target/*
