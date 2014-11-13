@@ -38,6 +38,17 @@ public class Person
     private Set<String> emails
             = new HashSet<String>();
 
+    // 构造方法
+    public Person() { }
+
+    public Person(String name,int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String toString() {
+        return "name: " + getName() + " age: " + getAge();
+    }
     // id的setter和getter方法
     public void setId(Integer id)
     {

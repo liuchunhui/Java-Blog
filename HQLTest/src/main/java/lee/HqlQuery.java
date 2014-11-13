@@ -5,8 +5,10 @@ import org.hibernate.Transaction;
 import org.huihui.domain.Person;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by huihui on 14-11-13.
@@ -19,10 +21,10 @@ public class HqlQuery
         HqlQuery mgr = new HqlQuery();
         // 调用查询方法
         mgr.findPersons();
-        // 调用第二个查询方法
-        mgr.findPersonsByHappenDate();
-        // 调用第二个查询方法
-        mgr.findPersonProperty();
+//        // 调用第二个查询方法
+//        mgr.findPersonsByHappenDate();
+//        // 调用第二个查询方法
+//        mgr.findPersonProperty();
     }
     // 第一个查询方法
     private void findPersons()
@@ -31,19 +33,45 @@ public class HqlQuery
         Session sess = HibernateUtil.currentSession();
         // 开始事务
         Transaction tx = sess.beginTransaction();
-        // 以HQL语句创建Query对象.
-        List pl = sess.createQuery("select distinct p from Person p "
-                + "join p.myEvents where title = :eventTitle")
-                // 执行setString()方法为HQL语句的参数赋值
-                .setString("eventTitle" , "标题0")
-                        // Query调用list()方法获取查询的全部实例
-                .list();
-        // 遍历查询的全部结果
-        for(Object ele : pl)
-        {
+//        // 以HQL语句创建Query对象.
+//        List pl = sess.createQuery("select distinct p from Person p "
+//                + "join p.myEvents where title = :eventTitle")
+//                // 执行setString()方法为HQL语句的参数赋值
+//                .setString("eventTitle" , "标题0")
+//                        // Query调用list()方法获取查询的全部实例
+//                .list();
+//        // 遍历查询的全部结果
+//        for(Object ele : pl)
+//        {
+//            Person p = (Person)ele;
+//            System.out.println(p.getName());
+//        }
+
+//        // 将选择出的属性存入List对象中
+//        List pl = sess.createQuery("select new list(p.id,p.name,p.age) from Person as p")
+//                .list();
+//        for (Object ele : pl) {
+//
+//            System.out.println(ele.toString());
+//        }
+//        // HQL查询的聚集函数
+//        List count = sess.createQuery("select count(*) from Person ").list();
+//        List count = sess.createQuery("select avg (p.id) from Person as p").list();
+
+//        //  多态查询
+//        // from java.lang.Object o,返回所有被持久化的对象
+//        List count = sess.createQuery(" from java.lang.Object o").list();
+        List count = sess.createQuery("from Person as p1 " +
+                "                      where  p1.emails ").list();
+        for (Object ele : count) {
+
             Person p = (Person)ele;
-            System.out.println(p.getName());
+            System.out.println(p.toString() + " "+
+                    " ID:" + p.getId());
         }
+        System.out.println(count.size());
+
+
         // 提交事务
         tx.commit();
         HibernateUtil.closeSession();
@@ -84,7 +112,7 @@ public class HqlQuery
         // 开始事务
         Transaction tx = sess.beginTransaction();
         // 以HQL语句创建Query对象.
-        List pl = sess.createQuery("select distinct p.id,  p.name , p.age "
+        List pl = sess.createQuery("select distinct p.name , p.age "
                 + "from Person p join p.myEvents")
                 // Query调用list()方法访问查询得到的全部属性
                 .list();
