@@ -9,3 +9,6 @@ StrutsTest/lib/*
 StrutsTest/out/*
 HQLTest/lib/*
 HQLTest/target/*
+BookManageSystem/lib/*
+BookManageSystem/out/*
+BookManageSystem/target/*
