@@ -69,21 +69,21 @@
     </bean>
 
 
-    <!-- 配置 Hibernate 的局部事务管理器，使用 HibernateTransactionManager 类 -->
-    <!-- 该类实现 PlatformTransactionManager 接口，是针对 Hibernate 的特定实现 -->
-    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-        <!-- 配置 HibernateTransactionManager 时需要注入 SessionFactory 的引用 -->
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
+    <!--&lt;!&ndash; 配置 Hibernate 的局部事务管理器，使用 HibernateTransactionManager 类 &ndash;&gt;-->
+    <!--&lt;!&ndash; 该类实现 PlatformTransactionManager 接口，是针对 Hibernate 的特定实现 &ndash;&gt;-->
+    <!--<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">-->
+        <!--&lt;!&ndash; 配置 HibernateTransactionManager 时需要注入 SessionFactory 的引用 &ndash;&gt;-->
+        <!--<property name="sessionFactory" ref="sessionFactory"/>-->
+    <!--</bean>-->
 
-    <!-- 配置事务增强处理 Bean，指定事务管理器 -->
-    <tx:advice id="txAdvice" transaction-manager="transactionManager">
-        <!-- 用于配置详细的事务语义 -->
-        <tx:attributes>
-            <!-- 所有以 'get' 开头的方法是 read-only 的 -->
-            <tx:method name="get*" read-only="true"/>
-            <!-- 其他方法使用默认的事务配置 -->
-            <tx:method name="*"/>
-        </tx:attributes>
-    </tx:advice>
+    <!--&lt;!&ndash; 配置事务增强处理 Bean，指定事务管理器 &ndash;&gt;-->
+    <!--<tx:advice id="txAdvice" transaction-manager="transactionManager">-->
+        <!--&lt;!&ndash; 用于配置详细的事务语义 &ndash;&gt;-->
+        <!--<tx:attributes>-->
+            <!--&lt;!&ndash; 所有以 'get' 开头的方法是 read-only 的 &ndash;&gt;-->
+            <!--<tx:method name="get*" read-only="true"/>-->
+            <!--&lt;!&ndash; 其他方法使用默认的事务配置 &ndash;&gt;-->
+            <!--<tx:method name="*"/>-->
+        <!--</tx:attributes>-->
+    <!--</tx:advice>-->
 </beans>
